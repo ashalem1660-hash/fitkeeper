@@ -28,14 +28,15 @@ export type Workout = {
   name: string | null;
   notes: string | null;
   duration_min: number | null;
+  created_at: string;
 };
 
-export type Exercise = {
+export type WorkoutExercise = {
   id: string;
   workout_id: string;
   user_id: string;
   name: string;
-  position: number;
+  order_index: number;
 };
 
 export type ExerciseSet = {
@@ -46,30 +47,30 @@ export type ExerciseSet = {
   weight_kg: number | null;
   reps: number | null;
   rpe: number | null;
-  completed: boolean;
 };
 
-export type NutritionEntry = {
+export type Meal = {
   id: string;
   user_id: string;
   date: string;
-  meal: "breakfast" | "lunch" | "dinner" | "snack";
+  meal_type: "breakfast" | "lunch" | "dinner" | "snack" | null;
   food_name: string;
-  grams: number;
-  calories: number;
-  protein: number;
-  carbs: number;
-  fat: number;
+  grams: number | null;
+  calories: number | null;
+  protein: number | null;
+  carbs: number | null;
+  fat: number | null;
+  created_at: string;
 };
 
-export type WaterEntry = {
+export type WaterLog = {
   id: string;
   user_id: string;
   date: string;
-  ml: number;
+  amount_ml: number;
 };
 
-export type WeightEntry = {
+export type WeightLog = {
   id: string;
   user_id: string;
   date: string;
