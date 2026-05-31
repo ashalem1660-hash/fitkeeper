@@ -16,8 +16,8 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "FitKeeper — אימונים ותזונה",
-  description: "אפליקציית כושר חכמה בעברית — מעקב אימונים, תזונה, והישגים",
+  title: "DroneOps Field OS — מערכת תפעול שטח",
+  description: "מערכת מובייל לניהול יומן, עבודות שטח, תיעוד ושירות לקוחות.",
   manifest: "/manifest.json",
 };
 
@@ -36,9 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="he" dir="rtl" className={`${heebo.variable} ${rubik.variable}`}>
-      <body className="min-h-dvh antialiased">
-        {children}
-      </body>
+      <body className="min-h-dvh antialiased">{children}</body>
     </html>
   );
 }
