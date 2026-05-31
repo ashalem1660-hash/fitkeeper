@@ -1,0 +1,1 @@
+DroneOps deployment write access verified.
