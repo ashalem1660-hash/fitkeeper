@@ -8,11 +8,10 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     /*
-     * Match all routes except:
-     * - _next/static, _next/image
-     * - favicon.ico, icons, manifest
-     * - public files
+     * Keep FitKeeper authenticated routes protected while allowing the public
+     * DroneOps pilot at /droneops. Cloud persistence within DroneOps still
+     * requires a signed-in Supabase user in the client and is protected by RLS.
      */
-    "/((?!_next/static|_next/image|favicon.ico|icons|manifest.json|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|icons|manifest.json|droneops(?:/|$)|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };
